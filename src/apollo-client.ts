@@ -4,8 +4,8 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { createClient } from 'graphql-ws';
 
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000/graphql';
-const WS_URL = process.env.REACT_APP_WS_URL || 'ws://localhost:4000/graphql';
+const API_URL = process.env.REACT_APP_API_URL || 'https://scintillating-heart-production.up.railway.app/graphql';
+const WS_URL = process.env.REACT_APP_WS_URL || 'wss://scintillating-heart-production.up.railway.app/graphql';
 // HTTP connection to the API
 const httpLink = new HttpLink({
   uri: API_URL,
