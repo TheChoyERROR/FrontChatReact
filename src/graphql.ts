@@ -20,7 +20,7 @@ export const GET_USERS = gql`
   }
 `;
 
-// Query para obtener un usuario específico
+// Query para obtener un usuario específicoo
 export const GET_USER = gql`
   query GetUser($id: ID!) {
     user(id: $id) {
