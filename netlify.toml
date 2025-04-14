@@ -1,0 +1,26 @@
+[build]
+  # Directory to publish (build output)
+  publish = "build"
+  # Build command
+  command = "npm run build"
+
+[build.environment]
+  # Set production environment variable
+  NODE_ENV = "production"
+
+# Handle SPA routing (for React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Set cache headers for static assets
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variables will be applied during build
+[context.production.environment]
+  REACT_APP_API_URL = "https://scintillating-heart-production.up.railway.app/graphql"
+  REACT_APP_WS_URL = "wss://scintillating-heart-production.up.railway.app/graphql"
